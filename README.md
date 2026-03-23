@@ -1,19 +1,19 @@
 # 🚀 FaceAuth Pro
 
-API de autenticação biométrica facial usando **DeepFace + ArcFace**, com foco em precisão e tolerância a variações como barba, cabelo e iluminação.
+API de autentação biométrica facial utilizando **DeepFace + ArcFace**, com foco em precisão e tolerância a variações como barba, cabelo e iluminação.
 
 ---
 
 ## 🔥 Sobre o projeto
 
-O FaceAuth Pro é uma API desenvolvida em Python com FastAPI que permite:
+O **FaceAuth Pro** é uma API desenvolvida em Python com FastAPI que permite:
 
 * 📸 Cadastro facial a partir de documento (CNH/RG)
 * 🤳 Verificação de identidade via selfie
-* 🧠 Comparação usando modelo ArcFace
+* 🧠 Comparação com modelo ArcFace
 * ⚙️ Ajuste de tolerância para mudanças faciais
 
-Ideal para **testes, estudos e protótipos de sistemas biométricos**.
+Ideal para **testes, estudos e prototipagem de sistemas biométricos**.
 
 ---
 
@@ -57,7 +57,7 @@ NGROK_AUTH_TOKEN=seu_token_aqui
 
 ---
 
-## ▶️ Executando o projeto
+## ▶️ Executando localmente
 
 ```bash
 uvicorn app:app --reload
@@ -68,6 +68,31 @@ A API estará disponível em:
 ```
 http://localhost:8000
 ```
+
+---
+
+## ☁️ Rodando no Google Colab (modo teste)
+
+Este projeto também pode ser executado no **Google Colab**, ideal para testes rápidos sem precisar instalar nada localmente.
+
+### Passos básicos:
+
+1. Abra o Google Colab
+2. Cole o código do `app.py` em uma célula
+3. Instale as dependências:
+
+```python
+!pip install deepface opencv-python fastapi uvicorn pyngrok nest_asyncio python-multipart
+```
+
+4. Configure seu token do ngrok:
+
+```python
+import os
+os.environ["NGROK_AUTH_TOKEN"] = "seu_token_aqui"
+```
+
+5. Execute a API e use o link público gerado pelo ngrok
 
 ---
 
@@ -116,7 +141,7 @@ POST /verify/{user_id}
 
 * Banco de dados em memória (não persistente)
 * Não recomendado para produção sem melhorias
-* Depende de qualidade da imagem
+* Depende da qualidade da imagem
 
 ---
 
@@ -132,7 +157,7 @@ POST /verify/{user_id}
 
 ## 🛡️ Segurança
 
-* Utilize `.env` para variáveis sensíveis
+* Utilize `.env` para dados sensíveis
 * Nunca suba tokens no GitHub
 * Adicione `.env` ao `.gitignore`
 
@@ -149,12 +174,10 @@ POST /verify/{user_id}
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido para fins de estudo, aprendizado e prototipagem de soluções com inteligência artificial.
+Projeto desenvolvido para fins de estudo, aprendizado e prototipagem com inteligência artificial.
 
 ---
 
 ## ⭐ Contribuição
 
 Sinta-se livre para contribuir com melhorias, ideias ou correções!
-
----
